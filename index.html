@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code with Samiha – Learn to Code</title>
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <div class="logo-mark">&lt;/&gt;</div>
+        Code with <span>Samiha</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/languages.html">Languages</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/lessons.html?lang=html">Lessons</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/roadmap.html">Roadmap</a></li>
+          <li class="nav-item ms-lg-2"><a class="nav-link btn-community" href="pages/community.html">Community</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-section py-5">
+    <div class="container py-4 text-center">
+      <span class="badge rounded-pill fade-up px-3 py-2 mb-3" style="background:var(--teal-pale); color:var(--teal-dark); font-size:0.75rem; letter-spacing:0.08em;">FREE FOR EVERY GIRL</span>
+      <h1 class="section-title display-5 fw-bold mb-3 fade-up fade-up-1">Learn to code with <span style="color:var(--teal-main);">confidence</span> and community</h1>
+      <p class="text-muted mx-auto mb-4 fade-up fade-up-2" style="max-width:500px; font-size:1.05rem; line-height:1.75;">Code with Samiha is a learning platform built for girls who want to go from complete beginner to real developer, at their own pace.</p>
+      <div class="d-flex gap-3 justify-content-center flex-wrap mb-5 fade-up fade-up-3">
+        <a href="pages/languages.html" class="btn-pink btn">Start learning for free</a>
+        <a href="pages/roadmap.html" class="btn-pink-outline btn">View the roadmap</a>
+      </div>
+
+      <!-- fake editor -->
+      <div class="editor-preview mx-auto" style="max-width:760px;">
+        <div class="editor-bar">
+          <div class="editor-dot" style="background:#ff6b6b;"></div>
+          <div class="editor-dot" style="background:#ffd93d;"></div>
+          <div class="editor-dot" style="background:#6bcb77;"></div>
+          <span class="editor-filename">hello-world.js</span>
+        </div>
+        <div class="editor-body text-start">
+          <div><span class="cm">// Your first JavaScript program</span></div>
+          <div><span class="ck">function</span> <span class="cf">greet</span>(name) {</div>
+          <div>&nbsp;&nbsp;<span class="ck">return</span> <span class="cs">"Hello, "</span> + name + <span class="cs">"! Welcome to Code with Samiha."</span>;</div>
+          <div>}</div>
+          <div>&nbsp;</div>
+          <div><span class="cf">console</span>.<span class="cf">log</span>(<span class="cf">greet</span>(<span class="cs">"Samiha"</span>));</div>
+          <div>&nbsp;</div>
+          <div><span class="cm">// Output: Hello, Samiha! Welcome to Code with Samiha.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-bar py-4">
+    <div class="container">
+      <div class="row text-center g-3">
+        <div class="col-6 col-md-3"><div class="stat-num">8,200+</div><div class="stat-lbl">Girls learning</div></div>
+        <div class="col-6 col-md-3"><div class="stat-num">6</div><div class="stat-lbl">Languages covered</div></div>
+        <div class="col-6 col-md-3"><div class="stat-num">80+</div><div class="stat-lbl">Free lessons</div></div>
+        <div class="col-6 col-md-3"><div class="stat-num">94%</div><div class="stat-lbl">Completion rate</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LANGUAGES -->
+  <section class="py-5">
+    <div class="container py-3">
+      <p class="section-label">What you will learn</p>
+      <h2 class="section-title mb-2">Pick a language, start today</h2>
+      <p class="text-muted mb-5">Every track takes you from the basics to real projects. No prior experience needed.</p>
+
+      <div class="row g-4">
+        <!-- HTML & CSS -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="pink-card p-4 h-100 d-flex flex-column">
+            <div class="lang-icon mb-3" style="background:linear-gradient(135deg,#f97316,#ea580c);">HTML</div>
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <h5 class="mb-0 fw-semibold">HTML &amp; CSS</h5>
+              <span class="badge badge-beginner rounded-pill">Beginner</span>
+            </div>
+            <p class="text-muted small flex-grow-1">Build and style your first web pages. The foundation of everything on the web.</p>
+            <div class="progress mb-1"><div class="progress-bar progress-bar-pink" style="width:85%;"></div></div>
+            <div class="d-flex justify-content-between small text-muted mb-3"><span>85% finish</span><span>24 lessons</span></div>
+            <a href="pages/lessons.html?lang=html" class="btn-pink btn btn-sm w-100 text-center">Start learning</a>
+          </div>
+        </div>
+        <!-- JavaScript -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="pink-card p-4 h-100 d-flex flex-column">
+            <div class="lang-icon mb-3" style="background:linear-gradient(135deg,var(--teal-main),var(--teal-dark));">JS</div>
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <h5 class="mb-0 fw-semibold">JavaScript</h5>
+              <span class="badge badge-beginner rounded-pill">Beginner</span>
+            </div>
+            <p class="text-muted small flex-grow-1">Make your pages interactive. The most popular language in the world.</p>
+            <div class="progress mb-1"><div class="progress-bar progress-bar-pink" style="width:78%;"></div></div>
+            <div class="d-flex justify-content-between small text-muted mb-3"><span>78% finish</span><span>32 lessons</span></div>
+            <a href="pages/lessons.html?lang=js" class="btn-pink btn btn-sm w-100 text-center">Start learning</a>
+          </div>
+        </div>
+        <!-- Python -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="pink-card p-4 h-100 d-flex flex-column">
+            <div class="lang-icon mb-3" style="background:linear-gradient(135deg,#16a34a,#059669);">PY</div>
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <h5 class="mb-0 fw-semibold">Python</h5>
+              <span class="badge badge-beginner rounded-pill">Beginner</span>
+            </div>
+            <p class="text-muted small flex-grow-1">Great for beginners and pros alike. Used in AI, data science, and web development.</p>
+            <div class="progress mb-1"><div class="progress-bar" style="width:80%; background:#16a34a;"></div></div>
+            <div class="d-flex justify-content-between small text-muted mb-3"><span>80% finish</span><span>28 lessons</span></div>
+            <a href="pages/lessons.html?lang=python" class="btn-pink btn btn-sm w-100 text-center">Start learning</a>
+          </div>
+        </div>
+        <!-- React -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="pink-card p-4 h-100 d-flex flex-column">
+            <div class="lang-icon mb-3" style="background:linear-gradient(135deg,#2563eb,#1d4ed8);">RCT</div>
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <h5 class="mb-0 fw-semibold">React</h5>
+              <span class="badge badge-intermediate rounded-pill">Intermediate</span>
+            </div>
+            <p class="text-muted small flex-grow-1">Build modern web apps with components. Used by thousands of companies worldwide.</p>
+            <div class="progress mb-1"><div class="progress-bar" style="width:60%; background:#2563eb;"></div></div>
+            <div class="d-flex justify-content-between small text-muted mb-3"><span>60% finish</span><span>36 lessons</span></div>
+            <a href="pages/lessons.html?lang=react" class="btn-pink-outline btn btn-sm w-100 text-center">Start learning</a>
+          </div>
+        </div>
+        <!-- SQL -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="pink-card p-4 h-100 d-flex flex-column">
+            <div class="lang-icon mb-3" style="background:linear-gradient(135deg,#7c3aed,#6d28d9);">SQL</div>
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <h5 class="mb-0 fw-semibold">SQL</h5>
+              <span class="badge badge-intermediate rounded-pill">Intermediate</span>
+            </div>
+            <p class="text-muted small flex-grow-1">Query databases and manage data. A skill every developer needs at some point.</p>
+            <div class="progress mb-1"><div class="progress-bar" style="width:70%; background:#7c3aed;"></div></div>
+            <div class="d-flex justify-content-between small text-muted mb-3"><span>70% finish</span><span>20 lessons</span></div>
+            <a href="pages/lessons.html?lang=sql" class="btn-pink-outline btn btn-sm w-100 text-center">Start learning</a>
+          </div>
+        </div>
+        <!-- Java -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="pink-card p-4 h-100 d-flex flex-column">
+            <div class="lang-icon mb-3" style="background:linear-gradient(135deg,#d97706,#b45309);">Java</div>
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <h5 class="mb-0 fw-semibold">Java</h5>
+              <span class="badge badge-advanced rounded-pill">Advanced</span>
+            </div>
+            <p class="text-muted small flex-grow-1">Enterprise, Android, and backend development. One of the most in-demand languages.</p>
+            <div class="progress mb-1"><div class="progress-bar" style="width:55%; background:#d97706;"></div></div>
+            <div class="d-flex justify-content-between small text-muted mb-3"><span>55% finish</span><span>40 lessons</span></div>
+            <a href="pages/lessons.html?lang=java" class="btn-pink-outline btn btn-sm w-100 text-center">Start learning</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="pages/languages.html" class="btn-pink-outline btn">View all languages</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-5" style="background:var(--teal-faint);">
+    <div class="container py-3">
+      <p class="section-label">How it works</p>
+      <h2 class="section-title mb-2">Simple, structured, and actually fun</h2>
+      <p class="text-muted mb-5">No confusing setup, no expensive subscriptions.</p>
+
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="pink-card p-4 text-center h-100">
+            <div class="rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center fw-bold" style="width:44px;height:44px;background:var(--teal-pale);color:var(--teal-dark);border:2px solid var(--teal-light);">1</div>
+            <h6 class="fw-semibold mb-2">Pick a language</h6>
+            <p class="text-muted small mb-0">Choose from our tracks based on your goals.</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="pink-card p-4 text-center h-100">
+            <div class="rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center fw-bold" style="width:44px;height:44px;background:var(--teal-pale);color:var(--teal-dark);border:2px solid var(--teal-light);">2</div>
+            <h6 class="fw-semibold mb-2">Follow the lessons</h6>
+            <p class="text-muted small mb-0">Short, focused lessons with real code examples you can try in the browser.</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="pink-card p-4 text-center h-100">
+            <div class="rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center fw-bold" style="width:44px;height:44px;background:var(--teal-pale);color:var(--teal-dark);border:2px solid var(--teal-light);">3</div>
+            <h6 class="fw-semibold mb-2">Practice the code</h6>
+            <p class="text-muted small mb-0">Work through real examples and try the live editor on every lesson page.</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="pink-card p-4 text-center h-100">
+            <div class="rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center fw-bold" style="width:44px;height:44px;background:var(--teal-pale);color:var(--teal-dark);border:2px solid var(--teal-light);">4</div>
+            <h6 class="fw-semibold mb-2">Build something real</h6>
+            <p class="text-muted small mb-0">Apply your skills with guided projects and share them with the community.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-5">
+    <div class="container py-3">
+      <p class="section-label">From our community</p>
+      <h2 class="section-title mb-5">Girls who started just like you</h2>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <div class="pink-card p-4 h-100">
+            <div class="quote-bar"></div>
+            <p class="text-muted small fst-italic mb-3">"I tried other platforms before but Code with Samiha actually explains things in a way that clicks for me. I do one lesson every morning before class."</p>
+            <div class="d-flex align-items-center gap-2">
+              <div class="avatar" style="background:var(--teal-main);">LM</div>
+              <div><div class="fw-semibold small">Lara M.</div><div class="text-muted" style="font-size:0.75rem;">Marketing student, Beirut</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="pink-card p-4 h-100">
+            <div class="quote-bar"></div>
+            <p class="text-muted small fst-italic mb-3">"The roadmap page changed everything for me. I had no idea where to start with web dev. Now I have a clear path and I have already built two projects."</p>
+            <div class="d-flex align-items-center gap-2">
+              <div class="avatar" style="background:var(--teal-dark);">NN</div>
+              <div><div class="fw-semibold small">Nadia N.</div><div class="text-muted" style="font-size:0.75rem;">Computer science sophomore</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="pink-card p-4 h-100">
+            <div class="quote-bar"></div>
+            <p class="text-muted small fst-italic mb-3">"The Python track is genuinely excellent. I went from complete beginner to writing my own scripts in about three weeks. The community is so supportive."</p>
+            <div class="d-flex align-items-center gap-2">
+              <div class="avatar" style="background:var(--teal-mid);">SR</div>
+              <div><div class="fw-semibold small">Sara R.</div><div class="text-muted" style="font-size:0.75rem;">Aspiring data analyst</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner py-5 text-white text-center">
+    <div class="container py-3" style="position:relative; z-index:1;">
+      <h2 class="fw-bold mb-3" style="font-family:var(--font-display); font-size:2rem;">Ready to start your coding journey?</h2>
+      <p class="mb-4 opacity-75">Join thousands of girls already learning on Code with Samiha. It is completely free.</p>
+      <a href="pages/languages.html" class="btn fw-bold px-4 py-2 rounded-pill" style="background:white; color:var(--teal-main);">Get started now</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-3">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <div class="col-12 col-md-5">
+          <div class="footer-brand-logo mb-2" style="font-size:1.2rem; font-weight:700;">Code with <span>Samiha</span></div>
+          <p class="small" style="max-width:240px;">A free coding platform built for girls who want to learn at their own pace.</p>
+        </div>
+        <div class="col-6 col-md-2">
+          <h5>Learn</h5>
+          <ul class="list-unstyled">
+            <li class="mb-1"><a href="pages/languages.html">Languages</a></li>
+            <li class="mb-1"><a href="pages/lessons.html?lang=html">Lessons</a></li>
+            <li class="mb-1"><a href="pages/roadmap.html">Roadmap</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2">
+          <h5>Community</h5>
+          <ul class="list-unstyled">
+            <li class="mb-1"><a href="pages/community.html">Forum</a></li>
+            <li class="mb-1"><a href="pages/community.html">Members</a></li>
+            <li class="mb-1"><a href="pages/community.html">Join us</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2">
+          <h5>About</h5>
+          <ul class="list-unstyled">
+            <li class="mb-1"><a href="#">Our story</a></li>
+            <li class="mb-1"><a href="#">Contact</a></li>
+            <li class="mb-1"><a href="#">Privacy</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr style="border-color:#3f3f46;" />
+      <p class="text-center small mb-0">&copy; 2026 Code with Samiha. Built with HTML, CSS, Bootstrap 5 &amp; JavaScript. Phase 2 — 2026.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script src="js/shared.js"></script>
+</body>
+</html>

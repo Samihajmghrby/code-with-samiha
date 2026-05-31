@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roadmap – Code with Samiha</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/custom.css" />
+  <style>
+    .roadmap-wrap { position: relative; }
+    .roadmap-wrap::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: var(--teal-pale);
+      transform: translateX(-50%);
+      z-index: 0;
+    }
+    .roadmap-row { position: relative; z-index: 1; }
+    @media (max-width: 767px) {
+      .roadmap-wrap::before { left: 18px; }
+      .card-left, .card-right { text-align: left !important; }
+      .card-left .skills { justify-content: flex-start !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">
+        <div class="logo-mark">&lt;/&gt;</div>
+        Code with <span>Samiha</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="languages.html">Languages</a></li>
+          <li class="nav-item"><a class="nav-link" href="lessons.html?lang=html">Lessons</a></li>
+          <li class="nav-item"><a class="nav-link active" href="roadmap.html">Roadmap</a></li>
+          <li class="nav-item ms-lg-2"><a class="nav-link btn-community" href="community.html">Community</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <p class="section-label">Your path forward</p>
+      <h1>Learning Roadmap</h1>
+      <p class="text-muted">Follow a structured path from zero to job-ready developer.</p>
+    </div>
+  </div>
+
+  <section class="py-5">
+    <div class="container">
+
+      <!-- TRACK SELECTOR -->
+      <div class="d-flex flex-wrap gap-2 mb-4">
+        <button class="filter-btn active" onclick="switchTrack(this)">Frontend Developer</button>
+        <button class="filter-btn" onclick="switchTrack(this)">Backend Developer</button>
+        <button class="filter-btn" onclick="switchTrack(this)">Full Stack</button>
+        <button class="filter-btn" onclick="switchTrack(this)">Data / Python</button>
+      </div>
+
+      <!-- LEGEND -->
+      <div class="d-flex gap-4 mb-5 flex-wrap">
+        <div class="d-flex align-items-center gap-2 small text-muted"><div style="width:12px;height:12px;border-radius:50%;background:var(--node-done, #059669);"></div>Completed</div>
+        <div class="d-flex align-items-center gap-2 small text-muted"><div style="width:12px;height:12px;border-radius:50%;background:var(--teal-main);"></div>In progress</div>
+        <div class="d-flex align-items-center gap-2 small text-muted"><div style="width:12px;height:12px;border-radius:50%;background:#a1a1aa;"></div>Not started</div>
+      </div>
+
+      <div class="roadmap-wrap pb-5">
+
+        <!-- PHASE 1 -->
+        <div class="text-center mb-4">
+          <span class="badge rounded-pill px-3 py-2" style="background:white; border:2px solid var(--teal-light); color:var(--teal-dark); font-size:0.82rem; font-weight:700;">Phase 1 &mdash; The Basics</span>
+        </div>
+
+        <!-- Row 1 -->
+        <div class="row align-items-center roadmap-row mb-4">
+          <div class="col-5 text-end card-left">
+            <div class="pink-card p-3 d-inline-block text-start" style="border-color:var(--teal-light); max-width:300px;">
+              <h6 class="fw-semibold mb-1">HTML Fundamentals</h6>
+              <p class="small text-muted mb-2">Tags, structure, forms, semantic HTML.</p>
+              <div class="skills d-flex flex-wrap gap-1"><span class="skill-tag">Elements</span><span class="skill-tag">Forms</span><span class="skill-tag">Semantic HTML</span></div>
+            </div>
+          </div>
+          <div class="col-2 d-flex justify-content-center"><div class="roadmap-node node-done">&#10003;</div></div>
+          <div class="col-5"></div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="row align-items-center roadmap-row mb-4">
+          <div class="col-5"></div>
+          <div class="col-2 d-flex justify-content-center"><div class="roadmap-node node-done">&#10003;</div></div>
+          <div class="col-5 card-right">
+            <div class="pink-card p-3" style="border-color:var(--teal-light); max-width:300px;">
+              <h6 class="fw-semibold mb-1">CSS Styling</h6>
+              <p class="small text-muted mb-2">Selectors, box model, typography, colors.</p>
+              <div class="skills d-flex flex-wrap gap-1"><span class="skill-tag">Selectors</span><span class="skill-tag">Box model</span><span class="skill-tag">Colors</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="row align-items-center roadmap-row mb-5">
+          <div class="col-5 text-end card-left">
+            <div class="pink-card p-3 d-inline-block text-start" style="border-color:var(--teal-main); max-width:300px;">
+              <h6 class="fw-semibold mb-1">CSS Layout</h6>
+              <p class="small text-muted mb-2">Flexbox, CSS Grid, positioning, responsive design.</p>
+              <div class="skills d-flex flex-wrap gap-1"><span class="skill-tag">Flexbox</span><span class="skill-tag">Grid</span><span class="skill-tag">Media queries</span></div>
+            </div>
+          </div>
+          <div class="col-2 d-flex justify-content-center"><div class="roadmap-node node-active">3</div></div>
+          <div class="col-5"></div>
+        </div>
+
+        <!-- PHASE 2 -->
+        <div class="text-center mb-4">
+          <span class="badge rounded-pill px-3 py-2" style="background:white; border:2px solid var(--teal-light); color:var(--teal-dark); font-size:0.82rem; font-weight:700;">Phase 2 &mdash; JavaScript</span>
+        </div>
+
+        <div class="row align-items-center roadmap-row mb-4">
+          <div class="col-5"></div>
+          <div class="col-2 d-flex justify-content-center"><div class="roadmap-node node-locked">4</div></div>
+          <div class="col-5 card-right">
+            <div class="pink-card p-3" style="max-width:300px;">
+              <h6 class="fw-semibold mb-1">JavaScript Basics</h6>
+              <p class="small text-muted mb-2">Variables, functions, conditionals, loops, arrays.</p>
+              <div class="skills d-flex flex-wrap gap-1"><span class="skill-tag">Variables</span><span class="skill-tag">Functions</span><span class="skill-tag">Loops</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center roadmap-row mb-4">
+          <div class="col-5 text-end card-left">
+            <div class="pink-card p-3 d-inline-block text-start" style="max-width:300px;">
+              <h6 class="fw-semibold mb-1">DOM &amp; Events</h6>
+              <p class="small text-muted mb-2">Manipulate page content, handle user interactions.</p>
+              <div class="skills d-flex flex-wrap gap-1"><span class="skill-tag">DOM API</span><span class="skill-tag">Event listeners</span></div>
+            </div>
+          </div>
+          <div class="col-2 d-flex justify-content-center"><div class="roadmap-node node-locked">5</div></div>
+          <div class="col-5"></div>
+        </div>
+
+        <div class="row align-items-center roadmap-row mb-5">
+          <div class="col-5"></div>
+          <div class="col-2 d-flex justify-content-center"><div class="roadmap-node node-locked">6</div></div>
+          <div class="col-5 card-right">
+            <div class="pink-card p-3" style="max-width:300px;">
+              <h6 class="fw-semibold mb-1">Fetch &amp; APIs</h6>
+              <p class="small text-muted mb-2">Call external APIs, handle JSON, async/await.</p>
+              <div class="skills d-flex flex-wrap gap-1"><span class="skill-tag">Fetch API</span><span class="skill-tag">JSON</span><span class="skill-tag">Async/await</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PHASE 3 -->
+        <div class="text-center mb-4">
+          <span class="badge rounded-pill px-3 py-2" style="background:white; border:2px solid var(--teal-light); color:var(--teal-dark); font-size:0.82rem; font-weight:700;">Phase 3 &mdash; Frameworks &amp; Tools</span>
+        </div>
+
+        <div class="row align-items-center roadmap-row mb-4">
+          <div class="col-5 text-end card-left">
+            <div class="pink-card p-3 d-inline-block text-start" style="max-width:300px;">
+              <h6 class="fw-semibold mb-1">Git &amp; GitHub</h6>
+              <p class="small text-muted mb-2">Version control, branches, pull requests, deployment.</p>
+              <div class="skills d-flex flex-wrap gap-1"><span class="skill-tag">Git</span><span class="skill-tag">GitHub</span><span class="skill-tag">Deployment</span></div>
+            </div>
+          </div>
+          <div class="col-2 d-flex justify-content-center"><div class="roadmap-node node-locked">7</div></div>
+          <div class="col-5"></div>
+        </div>
+
+        <div class="row align-items-center roadmap-row mb-4">
+          <div class="col-5"></div>
+          <div class="col-2 d-flex justify-content-center"><div class="roadmap-node node-locked">8</div></div>
+          <div class="col-5 card-right">
+            <div class="pink-card p-3" style="max-width:300px;">
+              <h6 class="fw-semibold mb-1">React</h6>
+              <p class="small text-muted mb-2">Components, props, state, hooks, routing.</p>
+              <div class="skills d-flex flex-wrap gap-1"><span class="skill-tag">Components</span><span class="skill-tag">useState</span><span class="skill-tag">useEffect</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center roadmap-row">
+          <div class="col-5 text-end card-left">
+            <div class="pink-card p-3 d-inline-block text-start" style="max-width:300px;">
+              <h6 class="fw-semibold mb-1">Build your portfolio</h6>
+              <p class="small text-muted mb-2">Three real projects on GitHub. You are job-ready.</p>
+              <div class="skills d-flex flex-wrap gap-1"><span class="skill-tag">Projects</span><span class="skill-tag">GitHub Pages</span><span class="skill-tag">Job ready</span></div>
+            </div>
+          </div>
+          <div class="col-2 d-flex justify-content-center"><div class="roadmap-node node-locked" style="font-size:1rem;">&#9873;</div></div>
+          <div class="col-5"></div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="lessons.html?lang=html" class="btn-pink btn">Start the first lesson</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer pt-5 pb-3">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <div class="col-12 col-md-5"><div class="footer-brand-logo mb-2" style="font-size:1.2rem; font-weight:700;">Code with <span>Samiha</span></div><p class="small" style="max-width:240px;">A free coding platform built for girls who want to learn at their own pace.</p></div>
+        <div class="col-6 col-md-2"><h5>Learn</h5><ul class="list-unstyled"><li class="mb-1"><a href="languages.html">Languages</a></li><li class="mb-1"><a href="lessons.html?lang=html">Lessons</a></li><li class="mb-1"><a href="roadmap.html">Roadmap</a></li></ul></div>
+        <div class="col-6 col-md-2"><h5>Community</h5><ul class="list-unstyled"><li class="mb-1"><a href="community.html">Forum</a></li><li class="mb-1"><a href="community.html">Join us</a></li></ul></div>
+        <div class="col-6 col-md-2"><h5>About</h5><ul class="list-unstyled"><li class="mb-1"><a href="#">Our story</a></li><li class="mb-1"><a href="#">Contact</a></li></ul></div>
+      </div>
+      <hr style="border-color:#3f3f46;" />
+      <p class="text-center small mb-0">&copy; 2026 Code with Samiha. Built with HTML, CSS, Bootstrap 5 &amp; JavaScript.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/shared.js"></script>
+  <script>
+    function switchTrack(btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+  </script>
+</body>
+</html>

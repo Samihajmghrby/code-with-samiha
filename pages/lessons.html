@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lessons – Code with Samiha</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/custom.css" />
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">
+        <div class="logo-mark">&lt;/&gt;</div>
+        Code with <span>Samiha</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="languages.html">Languages</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Lessons</a></li>
+          <li class="nav-item"><a class="nav-link" href="roadmap.html">Roadmap</a></li>
+          <li class="nav-item ms-lg-2"><a class="nav-link btn-community" href="community.html">Community</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- page hero - filled by JS -->
+  <div class="page-hero">
+    <div class="container">
+      <p class="section-label" id="heroLabel">Beginner Track</p>
+      <h1 id="heroTitle">Lessons</h1>
+      <p class="text-muted" id="heroSub"></p>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <div class="row g-4">
+
+      <!-- sidebar -->
+      <div class="col-12 col-lg-3">
+        <div class="lesson-sidebar">
+          <p class="text-muted fw-semibold mb-2" style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em;">Lessons</p>
+          <div class="d-flex flex-column gap-1" id="lessonList"></div>
+
+          <div class="mt-3 p-3 rounded-3" style="background:var(--teal-faint); border:1px solid var(--teal-pale);">
+            <div class="small fw-semibold mb-1" style="color:var(--teal-dark);">Your progress</div>
+            <div class="progress mb-1"><div class="progress-bar progress-bar-pink" style="width:20%;"></div></div>
+            <div class="small text-muted">2 of 10 completed</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- lesson content - filled by JS -->
+      <div class="col-12 col-lg-9" id="lessonContent"></div>
+
+    </div>
+  </div>
+
+  <footer class="site-footer pt-5 pb-3 mt-4">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <div class="col-12 col-md-5">
+          <div class="footer-brand-logo mb-2" style="font-size:1.2rem; font-weight:700;">Code with <span>Samiha</span></div>
+          <p class="small" style="max-width:240px;">A free coding platform built for girls.</p>
+        </div>
+        <div class="col-6 col-md-2">
+          <h5>Learn</h5>
+          <ul class="list-unstyled">
+            <li class="mb-1"><a href="languages.html">Languages</a></li>
+            <li class="mb-1"><a href="roadmap.html">Roadmap</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2">
+          <h5>Community</h5>
+          <ul class="list-unstyled">
+            <li class="mb-1"><a href="community.html">Forum</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr style="border-color:#3f3f46;" />
+      <p class="text-center small mb-0">&copy; 2026 Code with Samiha. Built with HTML, CSS, Bootstrap 5 &amp; JavaScript.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script>
+
+    // ── all lesson data in one place ─────────────────────────────────
+    var courses = {
+
+      html: {
+        label:    "Beginner Track",
+        title:    "HTML Lessons",
+        sub:      "18 lessons &middot; About 6 hours &middot; No experience needed",
+        lessons:  ["What is HTML?", "Your First HTML Page", "HTML Elements & Tags",
+                   "Headings & Paragraphs", "Links & Images", "Lists (ul, ol)",
+                   "Tables", "Forms", "Semantic HTML", "HTML & CSS Together"],
+        active:   2,
+        lessonTitle: "HTML Elements & Tags",
+        lessonNum:   "Lesson 3",
+        lessonMeta:  "15 minutes &middot; Beginner",
+        prev: "Your First HTML Page",
+        next: "Headings & Paragraphs",
+        content: `
+          <p class="text-muted lh-lg">Everything you see on a web page is made of HTML <strong>elements</strong>.
+          An element is just content wrapped inside a <strong>tag</strong>.</p>
+          <p class="text-muted lh-lg">Most tags come in pairs — an opening tag and a closing tag.
+          The closing tag has a forward slash before the name.</p>
+
+          <h5 class="fw-semibold mt-4 mb-3" style="color:var(--teal-dark);">Basic tag structure</h5>
+          <div class="code-block mb-4">
+            <div class="code-block-header">
+              <span class="code-block-filename">index.html</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <div class="code-block-body">
+<span class="cm">&lt;!-- opening tag --&gt;  content  &lt;!-- closing tag --&gt;</span>
+<span class="ck">&lt;p&gt;</span>This is a paragraph.<span class="ck">&lt;/p&gt;</span>
+<span class="ck">&lt;h1&gt;</span>This is a big heading<span class="ck">&lt;/h1&gt;</span>
+<span class="ck">&lt;h3&gt;</span>This is a smaller heading<span class="ck">&lt;/h3&gt;</span>
+            </div>
+          </div>
+
+          <h5 class="fw-semibold mt-4 mb-3" style="color:var(--teal-dark);">A full basic page</h5>
+          <div class="code-block mb-4">
+            <div class="code-block-header">
+              <span class="code-block-filename">index.html</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <div class="code-block-body">
+<span class="ck">&lt;!DOCTYPE html&gt;</span>
+<span class="ck">&lt;html&gt;</span>
+  <span class="ck">&lt;head&gt;</span>
+    <span class="ck">&lt;title&gt;</span>My First Page<span class="ck">&lt;/title&gt;</span>
+  <span class="ck">&lt;/head&gt;</span>
+  <span class="ck">&lt;body&gt;</span>
+    <span class="ck">&lt;h1&gt;</span>Hello World<span class="ck">&lt;/h1&gt;</span>
+    <span class="ck">&lt;p&gt;</span>This is my first web page.<span class="ck">&lt;/p&gt;</span>
+  <span class="ck">&lt;/body&gt;</span>
+<span class="ck">&lt;/html&gt;</span>
+            </div>
+          </div>`,
+        tryLabel:       "Write some HTML below and click Preview.",
+        tryPlaceholder: "<h2>My name is Samiha</h2>\n<p>I am learning HTML today.</p>\n<p>This is <strong>bold</strong> text.</p>",
+        tryBtnText:     "Preview",
+        tryMode:        "html"
+      },
+
+      css: {
+        label:    "Beginner Track",
+        title:    "CSS Lessons",
+        sub:      "22 lessons &middot; About 8 hours &middot; Requires basic HTML knowledge",
+        lessons:  ["What is CSS?", "Selectors & Properties", "Colors & Backgrounds",
+                   "Fonts & Text", "The Box Model", "Margins & Padding",
+                   "Borders", "Flexbox", "CSS Grid", "Responsive Design"],
+        active:   2,
+        lessonTitle: "Colors & Backgrounds",
+        lessonNum:   "Lesson 3",
+        lessonMeta:  "20 minutes &middot; Beginner",
+        prev: "Selectors & Properties",
+        next: "Fonts & Text",
+        content: `
+          <p class="text-muted lh-lg">CSS gives you many ways to add color to your page.
+          You can color text, backgrounds, borders, and more.</p>
+          <p class="text-muted lh-lg">There are three ways to write a color: by name, by hex code, or using rgb().</p>
+
+          <h5 class="fw-semibold mt-4 mb-3" style="color:var(--teal-dark);">Text and background color</h5>
+          <div class="code-block mb-4">
+            <div class="code-block-header">
+              <span class="code-block-filename">style.css</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <div class="code-block-body">
+<span class="cm">/* color by name */</span>
+<span class="cf">p</span> {
+  <span class="ck">color</span>: <span class="cs">tomato</span>;
+  <span class="ck">background-color</span>: <span class="cs">lightyellow</span>;
+}
+
+<span class="cm">/* color by hex code */</span>
+<span class="cf">h1</span> {
+  <span class="ck">color</span>: <span class="cs">#9d174d</span>;
+}
+
+<span class="cm">/* color using rgb */</span>
+<span class="cf">body</span> {
+  <span class="ck">background-color</span>: <span class="cs">rgb(253, 242, 248)</span>;
+}
+            </div>
+          </div>
+
+          <h5 class="fw-semibold mt-4 mb-3" style="color:var(--teal-dark);">Background image</h5>
+          <div class="code-block mb-4">
+            <div class="code-block-header">
+              <span class="code-block-filename">style.css</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <div class="code-block-body">
+<span class="cf">.hero</span> {
+  <span class="ck">background-image</span>: <span class="cs">url("banner.jpg")</span>;
+  <span class="ck">background-size</span>: <span class="cs">cover</span>;
+  <span class="ck">background-repeat</span>: <span class="cs">no-repeat</span>;
+  <span class="ck">background-position</span>: <span class="cs">center</span>;
+}
+            </div>
+          </div>`,
+        tryLabel:       "Edit the CSS and click Apply to see it on the paragraph below.",
+        tryPlaceholder: "p {\n  color: #9d174d;\n  background-color: #fdf2f8;\n  padding: 12px;\n  border-radius: 8px;\n}",
+        tryBtnText:     "Apply styles",
+        tryMode:        "css"
+      },
+
+      js: {
+        label:    "Beginner Track",
+        title:    "JavaScript Lessons",
+        sub:      "32 lessons &middot; About 14 hours &middot; No experience needed",
+        lessons:  ["What is JavaScript?", "Variables & Data Types", "Functions",
+                   "Conditionals (if/else)", "Loops", "Arrays",
+                   "Objects", "DOM Manipulation", "Events", "Fetch & APIs"],
+        active:   2,
+        lessonTitle: "Functions in JavaScript",
+        lessonNum:   "Lesson 3",
+        lessonMeta:  "20 minutes &middot; Beginner",
+        prev: "Variables & Data Types",
+        next: "Conditionals (if/else)",
+        content: `
+          <p class="text-muted lh-lg">A <strong>function</strong> is a reusable block of code that does a specific task.
+          Instead of writing the same code over and over, you write a function once and call it whenever you need it.</p>
+
+          <h5 class="fw-semibold mt-4 mb-3" style="color:var(--teal-dark);">Defining and calling a function</h5>
+          <div class="code-block mb-4">
+            <div class="code-block-header">
+              <span class="code-block-filename">script.js</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <div class="code-block-body">
+<span class="cm">// define a function</span>
+<span class="ck">function</span> <span class="cf">greet</span>() {
+  <span class="cf">console</span>.<span class="cf">log</span>(<span class="cs">"Hello, World!"</span>);
+}
+
+<span class="cm">// call the function</span>
+<span class="cf">greet</span>();
+            </div>
+          </div>
+
+          <h5 class="fw-semibold mt-4 mb-3" style="color:var(--teal-dark);">Functions with parameters</h5>
+          <div class="code-block mb-4">
+            <div class="code-block-header">
+              <span class="code-block-filename">script.js</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <div class="code-block-body">
+<span class="ck">function</span> <span class="cf">greet</span>(name) {
+  <span class="cf">console</span>.<span class="cf">log</span>(<span class="cs">"Hello, "</span> + name + <span class="cs">"!"</span>);
+}
+
+<span class="cf">greet</span>(<span class="cs">"Samiha"</span>); <span class="cm">// Hello, Samiha!</span>
+<span class="cf">greet</span>(<span class="cs">"Lara"</span>);   <span class="cm">// Hello, Lara!</span>
+            </div>
+          </div>
+
+          <h5 class="fw-semibold mt-4 mb-3" style="color:var(--teal-dark);">Returning a value</h5>
+          <div class="code-block mb-4">
+            <div class="code-block-header">
+              <span class="code-block-filename">script.js</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <div class="code-block-body">
+<span class="ck">function</span> <span class="cf">add</span>(a, b) {
+  <span class="ck">return</span> a + b;
+}
+
+<span class="ck">var</span> result = <span class="cf">add</span>(<span class="cn">3</span>, <span class="cn">5</span>);
+<span class="cf">console</span>.<span class="cf">log</span>(result); <span class="cm">// 8</span>
+            </div>
+          </div>`,
+        tryLabel:       "Edit the code and click Run to see the output.",
+        tryPlaceholder: "function multiply(a, b) {\n  return a * b;\n}\n\nconsole.log(multiply(4, 6));\nconsole.log(multiply(10, 3));",
+        tryBtnText:     "Run code",
+        tryMode:        "js"
+      },
+
+      python: {
+        label:    "Beginner Track",
+        title:    "Python Lessons",
+        sub:      "28 lessons &middot; About 12 hours &middot; No experience needed",
+        lessons:  ["What is Python?", "Variables & Data Types", "Print & Input",
+                   "If / Else", "Loops", "Lists",
+                   "Dictionaries", "Functions", "String Methods", "File Handling"],
+        active:   2,
+        lessonTitle: "Print & Input",
+        lessonNum:   "Lesson 3",
+        lessonMeta:  "20 minutes &middot; Beginner",
+        prev: "Variables & Data Types",
+        next: "If / Else",
+        content: `
+          <p class="text-muted lh-lg">The two most basic things you will do in Python are <strong>printing output</strong>
+          to the screen and <strong>reading input</strong> from the user.</p>
+
+          <h5 class="fw-semibold mt-4 mb-3" style="color:var(--teal-dark);">The print() function</h5>
+          <div class="code-block mb-4">
+            <div class="code-block-header">
+              <span class="code-block-filename">hello.py</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <div class="code-block-body">
+<span class="cm"># print a message</span>
+<span class="cf">print</span>(<span class="cs">"Hello, world!"</span>)
+
+<span class="cm"># print a number</span>
+<span class="cf">print</span>(<span class="cn">42</span>)
+
+<span class="cm"># print a variable</span>
+name = <span class="cs">"Samiha"</span>
+<span class="cf">print</span>(<span class="cs">"My name is"</span>, name)
+            </div>
+          </div>
+
+          <h5 class="fw-semibold mt-4 mb-3" style="color:var(--teal-dark);">The input() function</h5>
+          <div class="code-block mb-4">
+            <div class="code-block-header">
+              <span class="code-block-filename">ask.py</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <div class="code-block-body">
+<span class="cm"># ask the user their name</span>
+name = <span class="cf">input</span>(<span class="cs">"What is your name? "</span>)
+<span class="cf">print</span>(<span class="cs">"Nice to meet you,"</span>, name)
+
+<span class="cm"># ask for a number and convert it</span>
+age = <span class="cf">int</span>(<span class="cf">input</span>(<span class="cs">"How old are you? "</span>))
+<span class="cf">print</span>(<span class="cs">"You are"</span>, age, <span class="cs">"years old."</span>)
+            </div>
+          </div>`,
+        tryLabel:       "Basic Python simulator — supports print() and string variables.",
+        tryPlaceholder: "name = \"Samiha\"\nprint(\"Hello,\", name)\nprint(\"Welcome to Python!\")",
+        tryBtnText:     "Run code",
+        tryMode:        "python"
+      },
+
+      react: {
+        label: "Intermediate Track", title: "React Lessons",
+        sub: "36 lessons &middot; About 18 hours &middot; Requires JavaScript knowledge",
+        lessons: ["What is React?","Components","JSX Syntax","Props","State with useState",
+                  "useEffect Hook","Lists & Keys","Forms in React","React Router","Fetching Data"],
+        active: 0, comingSoon: true,
+        lessonTitle: "React", lessonNum: "", lessonMeta: "", prev: "", next: "", content: ""
+      },
+      sql: {
+        label: "Intermediate Track", title: "SQL Lessons",
+        sub: "20 lessons &middot; About 8 hours &middot; No experience needed",
+        lessons: ["What is a Database?","SELECT Queries","WHERE Clause","ORDER BY & LIMIT","INSERT INTO",
+                  "UPDATE & DELETE","JOINs","GROUP BY","Aggregate Functions","Subqueries"],
+        active: 0, comingSoon: true,
+        lessonTitle: "SQL", lessonNum: "", lessonMeta: "", prev: "", next: "", content: ""
+      },
+      node: {
+        label: "Intermediate Track", title: "Node.js Lessons",
+        sub: "24 lessons &middot; About 10 hours &middot; Requires JavaScript knowledge",
+        lessons: ["What is Node.js?","Modules & require()","File System","HTTP Module","Express Setup",
+                  "Routing","Middleware","REST APIs","Working with JSON","Connecting to a Database"],
+        active: 0, comingSoon: true,
+        lessonTitle: "Node.js", lessonNum: "", lessonMeta: "", prev: "", next: "", content: ""
+      },
+      java: {
+        label: "Advanced Track", title: "Java Lessons",
+        sub: "40 lessons &middot; About 22 hours &middot; Some programming experience needed",
+        lessons: ["What is Java?","Variables & Types","Control Flow","Methods","Classes & Objects",
+                  "Inheritance","Interfaces","Exception Handling","Collections","File I/O"],
+        active: 0, comingSoon: true,
+        lessonTitle: "Java", lessonNum: "", lessonMeta: "", prev: "", next: "", content: ""
+      },
+      cpp: {
+        label: "Advanced Track", title: "C++ Lessons",
+        sub: "38 lessons &middot; About 20 hours &middot; Some programming experience needed",
+        lessons: ["Introduction to C++","Variables & Data Types","Control Structures","Functions",
+                  "Arrays & Pointers","Classes & Objects","Inheritance","STL Containers",
+                  "Memory Management","File Handling"],
+        active: 0, comingSoon: true,
+        lessonTitle: "C++", lessonNum: "", lessonMeta: "", prev: "", next: "", content: ""
+      }
+    };
+
+    // ── read ?lang= from URL ─────────────────────────────────────────
+    var params = new URLSearchParams(window.location.search);
+    var lang   = params.get('lang') || 'html';
+    var course = courses[lang] || courses['html'];
+
+    // ── fill page hero ───────────────────────────────────────────────
+    document.getElementById('heroLabel').textContent  = course.label;
+    document.getElementById('heroTitle').textContent  = course.title;
+    document.getElementById('heroSub').innerHTML      = course.sub;
+    document.title = course.title + ' – Code with Samiha';
+
+    // ── build sidebar lesson list ────────────────────────────────────
+    var list = document.getElementById('lessonList');
+    for (var i = 0; i < course.lessons.length; i++) {
+      var btn = document.createElement('button');
+      btn.className = 'lesson-item' +
+        (i < course.active ? ' done' : '') +
+        (i === course.active ? ' active' : '');
+      btn.onclick = (function(el) { return function() { selectLesson(el); }; })(btn);
+
+      var dot = document.createElement('div');
+      dot.className = 'lesson-dot';
+      dot.innerHTML = i < course.active ? '&#10003;' : (i + 1);
+
+      btn.appendChild(dot);
+      btn.appendChild(document.createTextNode(course.lessons[i]));
+      list.appendChild(btn);
+    }
+
+    // ── build lesson content ─────────────────────────────────────────
+    var contentDiv = document.getElementById('lessonContent');
+
+    if (course.comingSoon) {
+      contentDiv.innerHTML =
+        '<div class="text-center py-5">' +
+          '<h3 style="font-family:var(--font-display); font-weight:700;" class="mb-3">Coming soon</h3>' +
+          '<p class="text-muted mb-4" style="max-width:420px; margin:0 auto 1.5rem;">' +
+            'We are still writing the lessons for this track. We want to make sure the content is really good before we publish it. Check back soon!' +
+          '</p>' +
+          '<a href="languages.html" class="btn-pink-outline btn">Back to all languages</a>' +
+        '</div>';
+    } else {
+      contentDiv.innerHTML =
+        '<span class="badge rounded-pill mb-2 d-inline-block" style="background:var(--teal-pale); color:var(--teal-dark);">' + course.lessonNum + '</span>' +
+        '<h2 style="font-family:var(--font-display); font-size:1.7rem; font-weight:700;" class="mb-1">' + course.lessonTitle + '</h2>' +
+        '<div class="d-flex gap-3 small text-muted mb-4"><span>' + course.lessonMeta + '</span></div>' +
+        course.content +
+        // try it section
+        '<div class="try-section mb-4">' +
+          '<h6 class="fw-semibold mb-1">Try it yourself</h6>' +
+          '<p class="text-muted small mb-3">' + course.tryLabel + '</p>' +
+          '<div class="row g-3">' +
+            '<div class="col-12 col-md-6">' +
+              '<label class="small fw-semibold text-muted text-uppercase mb-1" style="letter-spacing:0.06em;">Your code</label>' +
+              '<textarea id="codeInput" spellcheck="false">' + course.tryPlaceholder + '</textarea>' +
+            '</div>' +
+            '<div class="col-12 col-md-6">' +
+              '<label class="small fw-semibold text-muted text-uppercase mb-1" style="letter-spacing:0.06em;">Output</label>' +
+              (lang === 'css'
+                ? '<div style="background:white; color:var(--text-main); border:1px solid var(--teal-pale); border-radius:8px; padding:14px; min-height:150px;"><p id="previewText">This is a sample paragraph. Change the CSS to style this text.</p></div>'
+                : '<div id="outputPane" style="background:#1e1e2e; color:#ebbcba; border:1px solid var(--teal-pale); border-radius:8px; padding:14px; min-height:150px; font-family:var(--font-code); font-size:0.85rem; white-space:pre-wrap; overflow-y:auto;">Click Run to see output...</div>'
+              ) +
+            '</div>' +
+          '</div>' +
+          '<button class="btn-pink btn mt-3" onclick="runCode()">' + course.tryBtnText + '</button>' +
+        '</div>' +
+        // prev / next nav
+        '<div class="d-flex justify-content-between pt-3 mt-3" style="border-top:1px solid var(--teal-pale);">' +
+          '<a href="#" class="pink-card p-3 text-decoration-none" style="max-width:200px;">' +
+            '<div class="small text-muted">Previous</div>' +
+            '<div class="fw-semibold small" style="color:var(--text-main);">' + course.prev + '</div>' +
+          '</a>' +
+          '<a href="#" class="pink-card p-3 text-decoration-none text-end" style="max-width:200px;">' +
+            '<div class="small text-muted">Next</div>' +
+            '<div class="fw-semibold small" style="color:var(--text-main);">' + course.next + '</div>' +
+          '</a>' +
+        '</div>';
+    }
+
+    // ── run code buttons ─────────────────────────────────────────────
+    function runCode() {
+      var mode = course.tryMode;
+      var code = document.getElementById('codeInput').value;
+
+      if (mode === 'html') {
+        document.getElementById('outputPane') &&
+          (document.getElementById('outputPane').innerHTML = code);
+
+      } else if (mode === 'css') {
+        var old = document.getElementById('tryStyle');
+        if (old) old.remove();
+        var tag = document.createElement('style');
+        tag.id = 'tryStyle';
+        tag.textContent = code;
+        document.head.appendChild(tag);
+
+      } else if (mode === 'js') {
+        var out  = document.getElementById('outputPane');
+        var logs = [];
+        var orig = console.log;
+        console.log = function() {
+          var args = Array.prototype.slice.call(arguments);
+          logs.push(args.join(' '));
+        };
+        try {
+          eval(code);
+          out.style.color = '#ebbcba';
+          out.textContent = logs.length > 0 ? logs.join('\n') : '(No output)';
+        } catch (e) {
+          out.style.color = '#f6c177';
+          out.textContent = 'Error: ' + e.message;
+        }
+        console.log = orig;
+
+      } else if (mode === 'python') {
+        // simple print() simulator
+        var out   = document.getElementById('outputPane');
+        var lines = code.split('\n');
+        var vars  = {};
+        var output = [];
+
+        for (var i = 0; i < lines.length; i++) {
+          var line = lines[i].trim();
+          if (line === '' || line.charAt(0) === '#') continue;
+
+          // variable assignment
+          var assignMatch = line.match(/^(\w+)\s*=\s*(.+)$/);
+          if (assignMatch && line.indexOf('print') !== 0) {
+            var val = assignMatch[2].trim();
+            if ((val.charAt(0) === '"' && val.charAt(val.length-1) === '"') ||
+                (val.charAt(0) === "'" && val.charAt(val.length-1) === "'")) {
+              vars[assignMatch[1]] = val.slice(1, -1);
+            } else if (!isNaN(val)) {
+              vars[assignMatch[1]] = val;
+            } else {
+              vars[assignMatch[1]] = vars[val] !== undefined ? vars[val] : val;
+            }
+            continue;
+          }
+
+          // print()
+          if (line.indexOf('print(') === 0 && line.charAt(line.length-1) === ')') {
+            var inside = line.slice(6, -1);
+            var parts  = inside.split(',');
+            var result = [];
+            for (var j = 0; j < parts.length; j++) {
+              var part = parts[j].trim();
+              if ((part.charAt(0) === '"' && part.charAt(part.length-1) === '"') ||
+                  (part.charAt(0) === "'" && part.charAt(part.length-1) === "'")) {
+                result.push(part.slice(1, -1));
+              } else if (vars[part] !== undefined) {
+                result.push(vars[part]);
+              } else {
+                result.push(part);
+              }
+            }
+            output.push(result.join(' '));
+          }
+        }
+        out.style.color = '#ebbcba';
+        out.textContent = output.length > 0 ? output.join('\n') : '(No output)';
+      }
+    }
+
+    function copyCode(btn) {
+      var text = btn.closest('.code-block').querySelector('.code-block-body').innerText;
+      navigator.clipboard.writeText(text).then(function() {
+        btn.textContent = 'Copied!';
+        setTimeout(function() { btn.textContent = 'Copy'; }, 1500);
+      });
+    }
+
+    function selectLesson(el) {
+      var items = document.querySelectorAll('.lesson-item');
+      for (var i = 0; i < items.length; i++) {
+        items[i].classList.remove('active');
+      }
+      el.classList.add('active');
+    }
+
+  </script>
+</body>
+</html>
